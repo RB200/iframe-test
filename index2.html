@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" id="123">
 <head>
-    <title>Document</title>
+    <!--The white-space:nowrap makes the text not wrap when the border gets smaller. It also prevents the iframe from shrinking until the text disappears-->
     <style>
         body{
-            display:flex;
+            white-space:nowrap;
         }
     </style>
+    <title>Document</title>
 </head>
 <body id="12345">
-    <img id="pfp" src='./IMG_0371.jpg' width="500" height="500">
+    <h1 id="h1">Hello world! Hello world! Hello world! Hello world!</h1>
+    <h2 id="h2">Hello world! Hello world! Hello world! Hello world!</h2>
+    <h3 id="h3">Hello world! Hello world! Hello world! Hello world!</h3>
+    <h4 id="h4">Hello world! Hello world! Hello world! Hello world!</h4>
+    <h5 id="h5">Hello world! Hello world! Hello world! Hello world!</h5>
+    <h6 id="h6">Hello world! Hello world! Hello world! Hello world!</h6>
     <script>
+        // Removing the text every second, starting with the h1 and going to the h6
         setTimeout(()=>{
-            var f = document.getElementById('pfp')
-            f.setAttribute('width',100)
-            f.setAttribute('height',100)
+            document.getElementById('h1').style.display = 'none'
+            setTimeout(()=>{
+                document.getElementById('h2').style.display = 'none'
+                setTimeout(()=>{
+                    document.getElementById('h3').style.display = 'none'
+                    setTimeout(()=>{
+                        document.getElementById('h4').style.display = 'none'
+                        setTimeout(()=>{
+                            document.getElementById('h5').style.display = 'none'
+                            setTimeout(()=>{
+                                document.getElementById('h6').style.display = 'none'
+                            },1000)
+                        },1000)
+                    },1000)
+                },1000)
+            },1000)   
         },1000)
+        
     </script>
 </body>
 </html>
