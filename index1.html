@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        iframe{
+            border-width: 3px;
+            border-color: red;
+            padding-bottom: 5px;
+            padding-right: 5px
+        }
+    </style>
+    <script>
+        function resizeIFrame(obj){
+            obj.height = obj.contentWindow.document.body.scrollHeight + 10 + 'px'
+            obj.width = obj.contentWindow.document.body.scrollWidth + 10 + 'px'
+            window.requestAnimationFrame(()=>resizeIFrame(obj))
+            //obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px'
+            //obj.style.width = obj.contentWindow.document.documentElement.scrollWidth + 'px'
+        }
+    </script>
+</head>
+<body>
+    <iframe id="temp123" src="./index2.html" width="500" height="500" scrolling="no" onload="resizeIFrame(this)"></iframe>
+
+    <script>
+        //const callback = (mutationList, observer) => {
+        //    console.log(mutationList)
+        //}
+        //const config = { attributes: true ,attributeOldValue: true,subtree: true }
+        //
+        //var g = document.getElementById('temp123').contentWindow.document.documentElement
+        ////console.log(document.querySelector(g))
+        //console.log(typeof(g))
+        //const observer = new MutationObserver(callback)
+        //observer.observe(g,config)
+    </script>
+
+</body>
+</html>
